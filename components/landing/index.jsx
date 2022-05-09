@@ -1,6 +1,10 @@
-const Landing = () =>{
-    return(<div >
-        Landing component
-    </div>)
-}
-export default Landing
+import Directory from "../directory";
+
+const Landing = () => {
+  return (
+    <div className="landing">
+      <Directory />
+    </div>
+  );
+};
+export default Landing;
