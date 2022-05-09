@@ -1,5 +1,6 @@
 .container {
-  padding: 0 2rem;
+  // padding: 0 2rem;
+ 
 }
 
 .main {
@@ -57,7 +58,7 @@
 }
 
 .code {
-  background: #fafafa;
+  background: $primary;
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
