@@ -2,7 +2,7 @@ import Directory from "../directory";
 
 const Landing = () => {
   return (
-    <div className="landing">
+    <div className="landing container">
       <Directory />
     </div>
   );

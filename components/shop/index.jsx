@@ -1,5 +1,9 @@
+import CollectionOverview from "../collectionOverview"
+
 const Shop = ()=>{
-    return(<div>Shop component</div>)
+    return(
+        <CollectionOverview/>
+    )
 }
 
 export default Shop

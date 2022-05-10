@@ -21,7 +21,7 @@ const Header = () => {
   const [dropdown, setDropDown] = useState(false);
   const [cart, setCart] = useState(false);
   return (
-    <header className="container">     
+    <header >     
       <div className="header">
         <div className="logo--container">
           <Link href="/">
