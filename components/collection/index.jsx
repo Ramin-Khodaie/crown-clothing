@@ -3,7 +3,7 @@ import CollectionItem from "../collectionItem";
 
 const Collection = ({ item }) => {
   const { title, id, items } = item;
-  console.log(6666, title);
+  
   return (
     <div className="collectionPreview">
       <Link href={`/shop/${id}`}>
