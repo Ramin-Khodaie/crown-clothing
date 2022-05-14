@@ -1,5 +1,4 @@
-const AddToCart = (cartitems, itemToAdd) => {
-  console.log(9966,cartitems)
+const AddToCart = (cartitems, itemToAdd) => {  
   const existing = cartitems.find((item) => item.id === itemToAdd.id);
 
   if (existing) {
