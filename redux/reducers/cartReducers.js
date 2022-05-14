@@ -6,12 +6,6 @@ const initialState = {
   cartItems: [],
 };
 
-// export const cartItemReducer = (state = initialState, action) => {
-//   switch (action.type) {
-//     case "ADD_ITEM":
-//       state.cartItems = AddToCart(state.cartItems, action.payload);
-//   }
-// };
 const cartSlice = createSlice({
   name: "cart",
   initialState: initialState,
