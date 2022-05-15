@@ -1,6 +1,7 @@
 import CollectionData from '../../data/shopData';
 import Collection from '../collection';
 
+
 const CollectionOverview = () =>{
     
     return(

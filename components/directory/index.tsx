@@ -3,7 +3,7 @@ import DirectoryItem from '../directoryItem'
 
 const Directory = () =>{
 
-    
+console.log(877,landingData)    
     return(
         <div className="directory">
             {landingData.map((data, index) => (

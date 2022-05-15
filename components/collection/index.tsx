@@ -1,7 +1,8 @@
 import Link from "next/link";
 import CollectionItem from "../collectionItem";
+import {IShop} from '../../data/shopData'
 
-const Collection = ({ item }) => {
+const Collection = ({ item }:{item:IShop}) => {
   const { title, id, items } = item;
   
   return (
@@ -11,8 +12,8 @@ const Collection = ({ item }) => {
       </Link>
       <div className="preview">
         {items
-          .filter((item, idx) => idx < 4)
-          .map((item, idx) => (
+          .filter((item, idx:number) => idx < 4)
+          .map((item, idx:number) => (
             <CollectionItem collItem={item} key={idx} />
           ))}
       </div>

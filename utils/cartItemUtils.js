@@ -1,10 +1,9 @@
 const AddToCart = (cartitems, itemToAdd) => {  
-  const existing = cartitems.find((item) => item.id === itemToAdd.id);
-
+  const existing = cartitems.find((item) => item.id === itemToAdd.id);  
   if (existing) {
     return cartitems.map((item) =>
       item.id === itemToAdd.id
-        ? { ...item, quantity: itemToAdd.quantity + 1 }
+        ? { ...item, quantity: item.quantity + 1 }
         : item
     );
   }

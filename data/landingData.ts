@@ -1,4 +1,12 @@
-export const landingData = [
+export interface IDirectory {
+  title: string;
+  imageUrl: string;
+  id: number;
+  linkUrl: string;
+  size?: string;
+}
+
+export const landingData: IDirectory[] = [
   {
     title: "hats",
     imageUrl: "https://i.ibb.co/cvpntL1/hats.png",

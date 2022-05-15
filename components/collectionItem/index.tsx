@@ -1,17 +1,17 @@
 import CustomButton from "../custombutton";
-import { AddToCart } from "../../utils/cartItemUtils";
-import { useState } from "react";
-import {useDispatch} from 'react-redux'
-import {AddCartItems} from '../../redux/reducers/cartReducers';
-const CollectionItem = ({ collItem }) => {
+import { ICategory } from "../../data/shopData";
+import { useAppDispatch} from '../../redux/hooks'
+import { AddCartItems } from "../../redux/reducers/cartReducers";
+
+const CollectionItem = ({ collItem }: { collItem: ICategory }) => {
   const { imageUrl, name, price } = collItem;
-  
-  const dispatch = useDispatch()
+
+  const dispatch = useAppDispatch();
 
   const addItemtoCart = () => {
-      dispatch(AddCartItems(collItem))
+    dispatch(AddCartItems(collItem));
   };
-  
+
   return (
     <div className="collection-item">
       <div className="image" style={{ backgroundImage: `url(${imageUrl})` }} />

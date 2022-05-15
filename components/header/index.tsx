@@ -4,31 +4,35 @@ import { useRouter } from "next/router";
 import { FaBars } from "react-icons/fa";
 import { BiUser } from "react-icons/bi";
 import { BsCartPlus, BsCart2 } from "react-icons/bs";
-import {
-  MdOutlineNotifications,
-  MdFavoriteBorder,
-  MdLogin,
-  MdLogout,
-} from "react-icons/md";
+import { MdFavoriteBorder } from "react-icons/md";
 import { useState } from "react";
 import CartDropDown from "../cartdropdown";
 import Entrance from "../entrance";
 import Search from "../search";
+import {ToggleCartItems} from '../../redux/reducers/cartReducers'
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import {useSelector} from 'react-redux'
 const Header = () => {
   const router = useRouter();
   const pathname = router.pathname;
 
   const [dropdown, setDropDown] = useState(false);
-  const [cart, setCart] = useState(false);
+  const dispacth = useAppDispatch()
+  const {hidden, cartItems} = useAppSelector((state)=>state.cart)
+
+  const toggleCartItem = () =>{
+    
+    dispacth(ToggleCartItems())
+  }
   return (
-    <header >     
+    <header>
       <div className="header">
         <div className="logo--container">
           <Link href="/">
             <HeaderIcon className="header--logo" />
           </Link>
         </div>
-        <Search/>
+        <Search />
         <div className="header__options">
           <Link href="/shop">
             <a className={pathname === "/shop" ? "active" : ""}>Shop</a>
@@ -50,7 +54,7 @@ const Header = () => {
 
           {/* <MdOutlineNotifications className="header-icon" /> */}
           <MdFavoriteBorder className="header-icon" />
-          <BsCartPlus className="header-icon" onClick={() => setCart(!cart)} />
+          <BsCartPlus className="header-icon" onClick={()=>toggleCartItem()} />
         </div>
         <FaBars className="bars" />
         {dropdown && (
@@ -58,12 +62,12 @@ const Header = () => {
             <Entrance />
           </CartDropDown>
         )}
-        {/* {cart && (
+        {!hidden && (
         <CartDropDown
           component={<div>this is ganna be cart component</div>}
           styles="cart"
         />
-      )} */}
+      )}
       </div>
     </header>
   );

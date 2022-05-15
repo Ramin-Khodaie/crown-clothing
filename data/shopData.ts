@@ -1,4 +1,20 @@
-const SHOP_DATA = [
+export interface ICategory{
+  id:number;
+  name:string;
+  imageUrl:string;
+  price:number;
+}
+
+
+export interface IShop{
+  id:number;
+  title:string;
+  routeName:string;
+  items:ICategory[]
+}
+
+
+const SHOP_DATA:IShop[] = [  
     {
       id: 1,
       title: "Hats",
