@@ -1,4 +1,4 @@
-const CustomButton = ({ children, ...otherProps }) => {
+const CustomButton = ({ children, ...otherProps }:{children:any}) => {
   return (
     <button className="custom-button" {...otherProps}>
       {children}
