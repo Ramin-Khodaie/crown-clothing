@@ -1,6 +1,14 @@
-const CustomButton = ({ children, ...otherProps }:{children:any}) => {
+const CustomButton = ({
+  children,
+  handleClick,
+  ...otherProps
+}: {
+  children: any;
+  handleClick: () => void;
+  otherProps?: any;
+}) => {
   return (
-    <button className="custom-button" {...otherProps}>
+    <button className="custom-button" {...otherProps} onClick={handleClick}>
       {children}
     </button>
   );

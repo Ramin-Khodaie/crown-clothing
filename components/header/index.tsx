@@ -3,7 +3,7 @@ import HeaderIcon from "../icons/HeaderIcon";
 import { useRouter } from "next/router";
 import { FaBars } from "react-icons/fa";
 import { BiUser } from "react-icons/bi";
-import { BsCartPlus, BsCart2 } from "react-icons/bs";
+import { BsCartPlus, BsCart2, BsCart } from "react-icons/bs";
 import { MdFavoriteBorder } from "react-icons/md";
 import { useState } from "react";
 import DropDown from "../dropdown";
@@ -18,7 +18,7 @@ const Header = () => {
 
   const [dropdown, setDropDown] = useState(false);
   const dispacth = useAppDispatch();
-  const { hidden } = useAppSelector((state) => state.cart);
+  const { hidden, cartItems } = useAppSelector((state) => state.cart);
 
   const toggleCartItem = () => {
     dispacth(ToggleCartItems());
@@ -53,10 +53,21 @@ const Header = () => {
 
           {/* <MdOutlineNotifications className="header-icon" /> */}
           <MdFavoriteBorder className="header-icon" />
-          <BsCartPlus
+          <BsCart
             className="header-icon"
             onClick={() => toggleCartItem()}
-          />
+          ></BsCart>
+          <span
+            style={{
+              position: "absolute",
+              top: "23px",
+              right: "25px",
+              fontSize: "18px",
+              fontWeight:600
+            }}
+          >
+            {cartItems.length}
+          </span>
         </div>
         <FaBars className="bars" />
         {dropdown && (
