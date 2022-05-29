@@ -19,7 +19,7 @@ const CollectionItem = ({ collItem }: { collItem: ICategory }) => {
         <span className="name">{name}</span>
         <span className="price">$ {price}</span>
       </div>
-      <CustomButton onClick={addItemtoCart}> Add to Cart</CustomButton>
+      <CustomButton handleClick={addItemtoCart}> Add to Cart</CustomButton>
     </div>
   );
 };
